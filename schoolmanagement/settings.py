@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'school',
+    'school.apps.SchoolConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +121,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+MEDIA_URL = ''
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS=[
@@ -128,7 +130,7 @@ STATIC_DIR,
  ]
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 LOGIN_REDIRECT_URL='/afterlogin'
 
